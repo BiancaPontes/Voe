@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos\style.css">
     <link rel="icon" href="image/logo.ico" type="image/x-icon">
 
     <title>Validação dos Dados de Contato</title>
@@ -20,7 +20,7 @@
                 <li class="item-menu-04"> <a href="emconstrucao.html"> Aplicativo </a></li>
             </ul>
             <ul class="itens-direita"> 
-                <li class="cta-1"> <a href="emconstrucao.html"> Área do Cliente </a></li>
+                <li class="cta-1"> <a href="login.php"> Área do Cliente </a></li>
                 <li><button id="botao-fale-conosco" class="botao-fale-conosco">Fale Conosco</button></li>
             </ul>
         </div>
@@ -84,7 +84,6 @@
                 window.location.href = 'index.html';
             });
         
-    
         const params = new URLSearchParams(window.location.search);
         const nome = params.get('nome');
         const email = params.get('email');
@@ -92,7 +91,6 @@
         const nomerecebido = document.getElementById('nome-recebido');
         const emailrecebido = document.getElementById('email-recebido');
     
-        
         nomerecebido.textContent = nome 
         emailrecebido.textContent = email 
         

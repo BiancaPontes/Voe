@@ -115,3 +115,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 })
+
+
+const cadastro = document.getElementById('botao-cadastro-dependente');
+cadastro.style.cursor = 'pointer';
+
+document.addEventListener('DOMContentLoaded', function() {
+    cadastro.addEventListener('click', function() {
+        window.location.href = 'cadastrar-dependente.html'; 
+    });
+});
+
+cadastro.addEventListener('mouseenter', function() {
+    this.style.backgroundColor = corHover; 
+    cadastro.style.cursor = 'pointer';
+});
+
+cadastro.addEventListener('mouseleave', function() {
+    this.style.backgroundColor = corPrincipal; 
+    cadastro.style.cursor = 'defaut';
+});
+

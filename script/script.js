@@ -2,27 +2,31 @@
 
 const corPrincipal = getComputedStyle(document.documentElement).getPropertyValue('--cor-principal').trim();
 const corHover = getComputedStyle(document.documentElement).getPropertyValue('--cor-hover').trim();
-const botao = document.getElementById('botao-fale-conosco');
-botao.style.cursor = 'pointer';
+const botaoHome = document.getElementById('botao-fale-conosco');
+botaoHome.style.cursor = 'pointer';
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    botao.addEventListener('click', function() {
+    botaoHome.addEventListener('click', function() {
     
         window.location.href = 'form.html'; 
     });
 });
 
-botao.addEventListener('mouseenter', function() {
+
+botaoHome.addEventListener('mouseenter', function() {
     this.style.backgroundColor = corHover; 
-    botao.style.cursor = 'pointer';
+    botaoHome.style.cursor = 'pointer';
 });
 
-botao.addEventListener('mouseleave', function() {
+
+botaoHome.addEventListener('mouseleave', function() {
     this.style.backgroundColor = corPrincipal; 
-    botao.style.cursor = 'defaut';
+    botaoHome.style.cursor = 'defaut';
 });
 
+
+// menu estilização
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -43,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 })
+
+
+// formulario
 
 document.getElementById('botao').addEventListener('click', function(event) {
     const nome = document.getElementById('nome').value;
@@ -167,6 +174,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 })
+
+
+
+
+
+
+
 
 
 

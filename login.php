@@ -1,3 +1,43 @@
+<?php
+$servername = "localhost:3306"; 
+$username = "root";        
+$password = "";           
+$dbname = "atividade_somativa"; 
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $cpf = $_POST['cpf'];
+
+    $cpf = $conn->real_escape_string($cpf);
+    $email = $conn->real_escape_string($email);
+    $senha = $conn->real_escape_string($senha);
+    $sql = "SELECT * FROM login WHERE cpf = '$cpf' AND email = '$email' AND senha = MD5('$senha')";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $_SESSION['usuario_logado'] = $email;
+        header("Location: Ofertas.php");
+        exit;
+    } else {
+        echo "<script>alert('Email, senha ou CPF incorretos'); window.location.href = 'login.php';</script>";
+        exit;
+    }
+}
+
+$conn->close();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,20 +66,26 @@
             </div>
         </header>
     <main> 
-        <div class="formulario">
-            <div class="forms">
-                <h4>Entre em contato para saber mais!</h4>
-                <form class="forms-campos" id="forms-campos" action="formAction.html" method="GET">
-                    <label for="nome"> Nome </label><br>
-                    <input type="text" id="nome" name="nome" value="" required><br>
-                    <label for="email"> Email </label><br>
-                    <input type="email" id="email" name="email" value="" required><br>
-                    <button type="submit" id="botao"> Enviar</button>                    
+        <div class="formulario-login">
+            <div class="login">
+                <h4>Que bom te ver aqui, <br> vamos viajar?</h4>
+                <form class="login-campos" id="login-campos" method="POST" action="login.php">
+                    <label for="email-login">Email</label><br>
+                    <input type="email" id="email-login" name="email" required><br>
+                
+                    <label for="senha-login">Senha</label><br>
+                    <input type="password" id="senha-login" name="senha" required><br>
+                
+                    <label for="cpf-login">CPF</label><br>
+                    <input type="text" id="cpf-login" name="cpf" maxlength="14" required><br>
+                
+                    <button type="submit" id="botao">Entrar</button>
                 </form>
+                <a href="#" class="esqueci-senha">Esqueci minha senha!</a>
+                <a href="adiciona-novo-usuario.html" class="novo-usuario"> Criar uma Conta </a>
             </div>
-            <div class="formulario-frase">
-                <h2>Descubra destinos <br>incriveis</h2>
-            </div>
+        </div>
+        
         </div>
     </main>
     <footer class="footer">
@@ -80,3 +126,4 @@
     </body>
     
 </html>
+

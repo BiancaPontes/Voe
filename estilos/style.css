@@ -15,6 +15,7 @@
     --cor-secundaria: #242323;
     --cor-terciaria: #7B7B7B;
     --cor-forms: #BBE3E5;
+    --cor-login: #313131;
     --cor-4: #fff;
     --font-family: "Poppins", sans-serif;
     --font-p: 16px;
@@ -45,6 +46,30 @@
 }
 
 #botao-fale-conosco:hover {
+    background-color: var(--cor-hover); 
+}
+
+.botao-sair{
+    border-radius: 50px;
+    background-color: var(--cor-principal);
+    border: none;
+    padding: 8px 24px 8px 24px;
+    color: var(--cor-4); 
+}
+
+#botao-sair:hover {
+    background-color: var(--cor-hover); 
+}
+
+.botao-login{
+    border-radius: 50px;
+    background-color: var(--cor-principal);
+    border: none;
+    padding: 8px 24px 8px 24px;
+    color: var(--cor-4); 
+}
+
+#botao-login:hover {
     background-color: var(--cor-hover); 
 }
 
@@ -80,6 +105,20 @@
     padding-left: 162px;
 }
 
+.banner-inicial{
+    width: 100%;
+    height: 481px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../image/banner-02.png');
+    background-repeat: no-repeat;
+    display: flex;   
+    flex-direction: column; 
+    justify-content: center;
+    color: var(--cor-4);
+    padding-left: 162px;
+}
+
 .banner h1{
     font-size: 80px;
     line-height: 97px;
@@ -95,7 +134,6 @@
     display: flex;
     justify-content: space-between;
     padding: 116px;
-    gap: 1rem;
     background-color: var(--cor-secundaria);
 
 }
@@ -109,17 +147,23 @@
     gap: 1rem;
 }
 
-.assistencia24{
-     display: flex;
-     padding: 65px 200px ;
-     align-items: center;
-     gap: 30px;
+.viagens-paris{
+    display: flex;
+    padding: 65px 200px ;
+    align-items: center;
+    gap: 10rem;
+    justify-content: center;
 }
 
-.assistencia24 img {
-    height: 325px;
-    width: 409px;
+.assistencia24{
+    display: flex;
+    padding: 65px 200px ;
+    align-items: center;
+    gap: 10rem;
+    justify-content: center;
 }
+
+
 
 .sobrenos{
     display: flex;
@@ -142,6 +186,19 @@
     gap: 100px;
 }
 
+.viagens-disney {
+    display: flex;
+    align-items: center; 
+    padding: 65px 200px;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-4);
+    gap: 10rem;
+    justify-content: center;
+    border-top: 2px solid #f1f1f1;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+
 
 .botao-app{
     display: inline-block; 
@@ -161,6 +218,13 @@
     gap: 8em;
 }
 
+.formulario-dependentes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8em;
+}
+
 .forms{
  background-color: var(--cor-principal);
  padding: 5% ;
@@ -168,9 +232,57 @@
  border-radius: 10px;
 }
 
+.forms-dependentes{
+    background-color: var(--cor-principal);
+    padding: 5% ;
+    margin: 3%;
+    border-radius: 10px;
+   }
+
 .forms h4{
     padding-bottom: 20px;
-    
+}
+
+.formulario-login{
+    background-color: var(--cor-secundaria);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8em;
+}
+
+.login{
+    padding: 5% ;
+    margin: 3%;
+    border-radius: 10px;
+    color: var(--cor-4);
+    justify-content: center;
+}
+
+.login h4{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.esqueci-senha{
+    display: block;
+    text-align: center;
+    font-weight: 200;
+    font-size: 12px;
+    margin-bottom: 10px;
+    border-bottom: var(--cor-hover);
+    text-decoration: none;
+    color: var(--cor-4);
+}
+
+.novo-usuario{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--cor-principal);
 }
 
 .dadosdecontato{
@@ -208,6 +320,7 @@
     
 }
 
+
 .inicio-botao{
     padding: 0.5rem 20rem;
     border-radius: 0.5rem;
@@ -219,18 +332,25 @@
 }
 
 
-
-
-
-#nome, #email{
+#nome, #email, #idade, #parentesco{
     padding: 8px;
     border: var(--cor-4);
     background-color: var(--cor-forms);
     border-radius: 10px;
     width: 300px;
     margin-bottom: 1rem;
-
 }
+
+#email-login, #senha-login , #cpf-login, #parentesco-login, #idade-login, #nomelogin{
+    padding: 8px;
+    border: var(--cor-4);
+    background-color: var(--cor-login);
+    border-radius: 10px;
+    color: var(--cor-4);
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
 
 #botao{
     padding: 8px;
@@ -241,13 +361,35 @@
     margin-bottom: 1rem;
 }
 
+#botao-cadastro-dependente{
+    padding: 8px;
+    border: none;
+    background-color: var(--cor-4);
+    border-radius: 10px;
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
+#botao-cadastro-dependente:hover{
+    background-color: var(--cor-hover);
+    
+}
+
 
 .forms label{
 font-size: 12px;
 
 }
 
+.login label{
+    font-size: 12px;
+    
+    }
+
 #forms-page{
+    background-color: var(--cor-secundaria);
+}
+#login-page{
     background-color: var(--cor-secundaria);
 }
 
